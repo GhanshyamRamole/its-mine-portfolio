@@ -27,7 +27,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'experience', 'services', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'services', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -65,42 +65,6 @@ function App() {
     { name: 'Security', level: 87, icon: Shield },
     { name: 'Databases', level: 82, icon: Database }
   ];
-
-  // const experiences = [
-  //   {
-  //     year: '2023 - Present',
-  //     role: 'Senior DevOps Engineer',
-  //     company: 'TechCorp Solutions',
-  //     description: 'Led cloud migration initiatives, reduced deployment time by 75% through CI/CD optimization, and managed multi-cloud infrastructure serving 10M+ users.',
-  //     achievements: [
-  //       'Architected scalable Kubernetes clusters across 3 AWS regions',
-  //       'Implemented zero-downtime deployment strategies',
-  //       'Reduced infrastructure costs by 40% through optimization'
-  //     ]
-  //   },
-  //   {
-  //     year: '2021 - 2023',
-  //     role: 'DevOps Engineer',
-  //     company: 'CloudScale Inc.',
-  //     description: 'Designed and maintained cloud infrastructure, implemented monitoring solutions, and automated deployment pipelines for microservices architecture.',
-  //     achievements: [
-  //       'Built comprehensive monitoring stack with Prometheus & Grafana',
-  //       'Automated 95% of manual deployment processes',
-  //       'Improved system reliability to 99.9% uptime'
-  //     ]
-  //   },
-  //   {
-  //     year: '2019 - 2021',
-  //     role: 'Site Reliability Engineer',
-  //     company: 'DataFlow Systems',
-  //     description: 'Focused on system reliability, performance optimization, and incident response. Developed automation tools for infrastructure management.',
-  //     achievements: [
-  //       'Reduced mean time to recovery (MTTR) by 60%',
-  //       'Implemented comprehensive logging and alerting systems',
-  //       'Led disaster recovery planning and testing'
-  //     ]
-  //   }
-  // ];
 
   const services = [
     {
@@ -163,10 +127,10 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-              Dark Cloud
+              Ghanshyam Ramole
             </div>
             <div className="hidden md:flex space-x-8">
-              {['home', 'about', 'skills', 'experience', 'services', 'projects', 'contact'].map((section) => (
+              {['home', 'about', 'skills', 'services', 'projects', 'contact'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -189,18 +153,19 @@ function App() {
           <div className="mb-8">
             <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center overflow-hidden">
               <img 
-                src="/profile-image.jpg" 
-                alt="Profile" 
+                src="https://lh3.googleusercontent.com/a/ACg8ocKycxHkqbXJS4vNMN9p4bFCY3Ceo8x7_TnWoSRvCvKVSNvmDRKL=s360-c-no" 
+                alt="Ghanshyam Ramole" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   // Fallback to Server icon if image fails to load
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = 'block';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    parent.innerHTML = '<div class="w-16 h-16 text-white flex items-center justify-center"><svg class="w-16 h-16" fill="currentColor" viewBox="0 0 24 24"><path d="M4 2v20l8-8 8 8V2H4z"/></svg></div>';
+                  }
                 }}
               />
-              <img className="w-30 h-30 text-white" style={{ display: 'none' }} src="https://lh3.googleusercontent.com/a/ACg8ocKycxHkqbXJS4vNMN9p4bFCY3Ceo8x7_TnWoSRvCvKVSNvmDRKL=s360-c-no" />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400 bg-clip-text text-transparent">
@@ -244,12 +209,12 @@ function App() {
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-             <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent text-6xl">
-              Ghanshyam Ramole,
-            </div>
-              <h3 className="text-2xl font-semibold mb-6"> Passionate About Infrastructure Excellence </h3>
+              <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent mb-4">
+                Ghanshyam Ramole
+              </div>
+              <h3 className="text-2xl font-semibold mb-6">Passionate About Infrastructure Excellence</h3>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                With years of experience in DevOps and Site Reliability Engineering, I specialize in 
+                With extensive experience in DevOps and Site Reliability Engineering, I specialize in 
                 designing and implementing scalable, secure, and efficient infrastructure solutions. My expertise 
                 spans across cloud platforms, containerization, automation, and monitoring.
               </p>
@@ -261,11 +226,11 @@ function App() {
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 text-blue-400">
                   <CheckCircle className="w-5 h-5" />
-                  <span>+ Years Experience</span>
+                  <span>Professional Experience</span>
                 </div>
                 <div className="flex items-center gap-2 text-teal-400">
                   <CheckCircle className="w-5 h-5" />
-                  <span>+ Projects Delivered</span>
+                  <span>Multiple Projects Delivered</span>
                 </div>
               </div>
             </div>
@@ -326,43 +291,8 @@ function App() {
         </div>
       </section>
 
-      {/* Experience Section */}
-      {/* <section id="experience" className="py-20 bg-gray-800/50">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-              Experience
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-500 mx-auto"></div>
-          </div>
-          
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <div key={index} className="flex flex-col md:flex-row gap-6">
-                <div className="md:w-48 flex-shrink-0">
-                  <div className="text-blue-400 font-semibold">{exp.year}</div>
-                </div>
-                <div className="flex-1 bg-gray-800 p-6 rounded-lg border border-gray-700">
-                  <h3 className="text-xl font-bold mb-2">{exp.role}</h3>
-                  <h4 className="text-teal-400 font-semibold mb-4">{exp.company}</h4>
-                  <p className="text-gray-300 mb-4">{exp.description}</p>
-                  <ul className="space-y-2">
-                    {exp.achievements.map((achievement, achIndex) => (
-                      <li key={achIndex} className="flex items-start gap-2 text-gray-400">
-                        <CheckCircle className="w-4 h-4 text-green-400 mt-1 flex-shrink-0" />
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* Services Section */}
-      <section id="services" className="py-20">
+      <section id="services" className="py-20 bg-gray-800/50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
@@ -384,7 +314,7 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-800/50">
+      <section id="projects" className="py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
@@ -413,7 +343,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-20 bg-gray-800/50">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
@@ -437,7 +367,7 @@ function App() {
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="w-6 h-6 text-teal-400" />
-                  <span>+91 738515201</span>
+                  <span>+91 7385152011</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <MapPin className="w-6 h-6 text-blue-400" />
@@ -446,10 +376,10 @@ function App() {
               </div>
               
               <div className="flex gap-4 mt-8">
-                <a href="https://github.com/GhanshyamRamole" className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors">
+                <a href="https://github.com/GhanshyamRamole" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors">
                   <Github className="w-6 h-6" />
                 </a>
-                <a href="https://www.linkedin.com/in/ghanshyamramole/" className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors">
+                <a href="https://www.linkedin.com/in/ghanshyamramole/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors">
                   <Linkedin className="w-6 h-6" />
                 </a>
               </div>
